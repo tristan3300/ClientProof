@@ -190,11 +190,21 @@ export default function AppPage() {
       });
 
       if (!response.ok) {
-        const err = await response.json();
-        throw new Error(err.error || 'Erreur serveur');
+        let errorMsg = 'Erreur serveur';
+        try {
+          const err = await response.json();
+          errorMsg = err.error || errorMsg;
+        } catch {
+          // empty or non-JSON response
+        }
+        throw new Error(errorMsg);
       }
 
-      const data: AnalysisResult = await response.json();
+      const text = await response.text();
+      if (!text) {
+        throw new Error('Réponse vide du serveur. Vérifiez la configuration.');
+      }
+      const data: AnalysisResult = JSON.parse(text);
       setLoadingActive(false);
       setTimeout(() => displayResult(data), 500);
 
