@@ -3,6 +3,7 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Nav from '@/components/Nav';
 import ScoreCircle from '@/components/ScoreCircle';
 import styles from './page.module.css';
 
@@ -99,11 +100,7 @@ function riskTagClass(riskLevel: string): string {
 function Loading() {
   return (
     <>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>
-          Client<span className={styles.logoAccent}>Proof</span>
-        </Link>
-      </nav>
+      <Nav />
       <div className={styles.stateScreen}>
         <div className={styles.stateCard}>
           <div className={styles.loader} />
@@ -380,11 +377,7 @@ function RapportContent() {
   if (view.kind === 'loading') {
     return (
       <>
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.logo}>
-            Client<span className={styles.logoAccent}>Proof</span>
-          </Link>
-        </nav>
+        <Nav />
         <div className={styles.stateScreen}>
           <div className={styles.stateCard}>
             <div className={styles.loader} />
@@ -401,11 +394,7 @@ function RapportContent() {
   if (view.kind === 'error') {
     return (
       <>
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.logo}>
-            Client<span className={styles.logoAccent}>Proof</span>
-          </Link>
-        </nav>
+        <Nav />
         <div className={styles.stateScreen}>
           <div className={styles.stateCard}>
             <h2>{view.title}</h2>
@@ -424,11 +413,7 @@ function RapportContent() {
   if (view.kind === 'processing') {
     return (
       <>
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.logo}>
-            Client<span className={styles.logoAccent}>Proof</span>
-          </Link>
-        </nav>
+        <Nav />
         <div className={styles.stateScreen}>
           <div className={styles.stateCard}>
             <div className={styles.loader} />
@@ -455,11 +440,7 @@ function RapportContent() {
 
   return (
     <>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>
-          Client<span className={styles.logoAccent}>Proof</span>
-        </Link>
-      </nav>
+      <Nav />
 
       <div className={styles.report}>
         <div className={styles.container}>

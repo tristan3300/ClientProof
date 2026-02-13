@@ -5,23 +5,13 @@ import styles from '../app/page.module.css';
 
 export default function LandingInteractions() {
   useEffect(() => {
-    // =================== NAV SCROLL ===================
-    const nav = document.getElementById('landing-nav');
+    // =================== MOBILE CTA SCROLL ===================
     const mobileCta = document.getElementById('mobileCta');
 
     const handleScroll = () => {
-      const y = window.scrollY;
-
-      if (nav) {
-        if (y > 50) {
-          nav.classList.add(styles.navScrolled);
-        } else {
-          nav.classList.remove(styles.navScrolled);
-        }
-      }
-
       // Mobile CTA appears after scrolling past hero
       if (mobileCta && window.innerWidth <= 768) {
+        const y = window.scrollY;
         if (y > 600) {
           mobileCta.classList.add(styles.mobileCtaVisible);
         } else {

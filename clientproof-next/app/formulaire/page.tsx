@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import Nav from "@/components/Nav";
 import styles from "./page.module.css";
 
 export default function FormulairePage() {
@@ -33,11 +34,7 @@ export default function FormulairePage() {
 
   return (
     <>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>
-          Client<span>Proof</span>
-        </Link>
-      </nav>
+      <Nav />
 
       <div className={styles.headerBlock}>
         <div className={styles.stepBadge}>

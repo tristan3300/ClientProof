@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Nav from '@/components/Nav';
 import LoadingOverlay from '@/components/LoadingOverlay';
 import styles from './page.module.css';
 
@@ -308,11 +309,7 @@ export default function AppPage() {
   return (
     <div className={styles.page}>
       {/* ==================== NAV ==================== */}
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>
-          Client<span className={styles.logoAccent}>Proof</span>
-        </Link>
-      </nav>
+      <Nav />
 
       <div className={styles.container}>
         {/* ==================== HEADER ==================== */}

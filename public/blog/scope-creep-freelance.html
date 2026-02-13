@@ -36,6 +36,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 24px;
     }
     .logo {
       font-size: 19px;
@@ -43,8 +44,23 @@
       letter-spacing: -0.5px;
       color: #0f172a;
       text-decoration: none;
+      flex-shrink: 0;
     }
     .logo span { color: #dc2626; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #0f172a; }
     .cta-nav {
       font-size: 14px;
       padding: 10px 22px;
@@ -54,10 +70,15 @@
       border-radius: 8px;
       font-weight: 600;
       transition: all 0.2s;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
     .cta-nav:hover {
       background: #b91c1c;
       transform: translateY(-1px);
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
     }
     .wrap {
       max-width: 720px;
@@ -216,6 +237,12 @@
 <header>
   <div class="nav-inner">
     <a href="https://clientproof.fr" class="logo">Client<span>Proof</span></a>
+    <ul class="nav-links">
+      <li><a href="https://clientproof.fr/#method">Comment ca marche</a></li>
+      <li><a href="https://clientproof.fr/#pricing">Tarif</a></li>
+      <li><a href="https://clientproof.fr/#faq">FAQ</a></li>
+      <li><a href="https://clientproof.fr/blog">Blog</a></li>
+    </ul>
     <a href="https://clientproof.fr/app" class="cta-nav">Analyser gratuitement</a>
   </div>
 </header>
