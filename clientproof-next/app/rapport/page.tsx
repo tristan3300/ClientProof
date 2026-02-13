@@ -3,7 +3,7 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import Nav from '@/components/Nav';
+import Nav from '../../components/Nav';
 import ScoreCircle from '@/components/ScoreCircle';
 import styles from './page.module.css';
 

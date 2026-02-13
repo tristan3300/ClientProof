@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import Nav from "../../components/Nav";
 import styles from "./page.module.css";
 
 export default function MerciPage() {
