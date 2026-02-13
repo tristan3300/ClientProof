@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <p>&copy; {new Date().getFullYear()} ClientProof. Tous droits reserves. <Link href="/mentions-legales" className={styles.bottomLink}>Mentions legales</Link></p>
+        <p>&copy; {new Date().getFullYear()} ClientProof. Tous droits reserves. <Link href="/mentions-legales" className={styles.bottomLink}>Mentions legales</Link> <Link href="/politique-confidentialite" className={styles.bottomLink}>Confidentialite</Link></p>
       </div>
     </footer>
   );
