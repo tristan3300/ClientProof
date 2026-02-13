@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refuser un client freelance : quand dire non et comment le faire</title>
+  <meta name="description" content="Dire non a un prospect quand on est freelance, c'est difficile. Voici comment reperer les red flags, evaluer un client avant de signer, et refuser poliment avec des exemples de messages.">
+  <link rel="canonical" href="https://clientproof.fr/blog/refuser-client-freelance.html">
+  <meta property="og:title" content="Refuser un client freelance : quand dire non et comment le faire">
+  <meta property="og:description" content="Dire non a un prospect quand on est freelance, c'est difficile. Comment reperer les red flags, evaluer un client et refuser poliment.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://clientproof.fr/blog/refuser-client-freelance.html">
+  <meta property="og:locale" content="fr_FR">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a2e;
+      background: #f8f9fa;
+      line-height: 1.75;
+      font-size: 17px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid #f1f5f9;
+      z-index: 1000;
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo span { color: #dc2626; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #0f172a; }
+    .cta-nav {
+      font-size: 14px;
+      padding: 10px 22px;
+      background: #dc2626;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .cta-nav:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    article { padding: 48px 0 64px; }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .meta {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .intro {
+      font-size: 18px;
+      color: #374151;
+      margin-bottom: 36px;
+      border-left: 3px solid #dc2626;
+      padding-left: 16px;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 40px 0 16px;
+      letter-spacing: -0.3px;
+    }
+    p { margin-bottom: 16px; }
+    ul, ol {
+      margin: 0 0 20px 24px;
+    }
+    li { margin-bottom: 8px; }
+    strong { font-weight: 600; }
+    blockquote {
+      background: #fff;
+      border-left: 3px solid #e5e7eb;
+      padding: 16px 20px;
+      margin: 20px 0;
+      color: #4b5563;
+      font-style: italic;
+      border-radius: 0 6px 6px 0;
+    }
+    .warning {
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 15px;
+    }
+    .warning strong { color: #92400e; }
+    .callout {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .callout h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .callout a {
+      color: #dc2626;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .callout a:hover { text-decoration: underline; }
+    .msg-example {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 16px 0 24px;
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.7;
+    }
+    .msg-example strong {
+      display: block;
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .faq { margin-top: 40px; }
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 0;
+    }
+    .faq-item h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .faq-item p { margin-bottom: 0; color: #374151; }
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 24px 0;
+      text-align: center;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    footer a { color: #dc2626; text-decoration: none; }
+    @media (max-width: 600px) {
+      h1 { font-size: 26px; }
+      h2 { font-size: 20px; }
+      body { font-size: 16px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Refuser un client freelance : quand dire non et comment le faire",
+    "description": "Dire non a un prospect quand on est freelance, c'est difficile. Voici comment reperer les red flags, evaluer un client avant de signer, et refuser poliment.",
+    "author": { "@type": "Organization", "name": "ClientProof" },
+    "publisher": { "@type": "Organization", "name": "ClientProof", "url": "https://clientproof.fr" },
+    "mainEntityOfPage": "https://clientproof.fr/blog/refuser-client-freelance.html",
+    "datePublished": "2025-06-15",
+    "dateModified": "2025-06-15"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment refuser un client sans le vexer ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Remerciez-le pour sa confiance, expliquez brievement pourquoi le projet n'est pas un bon fit (planning, specialisation, perimetre), et orientez-le vers une alternative si possible. Restez bref et professionnel. Ne vous justifiez pas excessivement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il toujours donner une raison quand on refuse un prospect ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Vous n'avez aucune obligation de justifier un refus. Une phrase comme 'Je ne suis pas en mesure d'accompagner ce projet dans de bonnes conditions' suffit. Plus vous donnez de details, plus le client essaiera de negocier ou de contourner vos arguments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on refuser un client apres avoir envoye un devis ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, tant que le devis n'est pas signe. Un devis est une proposition, pas un engagement. Si vous detectez des signaux d'alerte apres l'envoi, vous avez le droit de vous retirer. Faites-le rapidement et professionnellement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de clients un freelance devrait-il refuser ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Il n'y a pas de chiffre magique. L'objectif n'est pas de refuser pour refuser, mais de filtrer les projets qui vous couteront plus qu'ils ne vous rapporteront. En pratique, beaucoup de freelances experimentes refusent entre 20 et 40% des demandes entrantes."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="https://clientproof.fr" class="logo">Client<span>Proof</span></a>
+    <ul class="nav-links">
+      <li><a href="https://clientproof.fr/#method">Comment ca marche</a></li>
+      <li><a href="https://clientproof.fr/#pricing">Tarif</a></li>
+      <li><a href="https://clientproof.fr/#faq">FAQ</a></li>
+      <li><a href="https://clientproof.fr/blog">Blog</a></li>
+    </ul>
+    <a href="https://clientproof.fr/app" class="cta-nav">Analyser gratuitement</a>
+  </div>
+</header>
+
+<div class="wrap">
+<article>
+
+  <h1>Refuser un client freelance : quand dire non et comment le faire</h1>
+  <div class="meta">Mis a jour en juin 2025 - Temps de lecture : 5 minutes</div>
+
+  <p class="intro">
+    Quand on est freelance, chaque client represente du chiffre d'affaires. Alors on a tendance a tout accepter, meme quand l'instinct dit non. Pourtant, les freelances qui s'en sortent le mieux sont ceux qui savent refuser. Pas par arrogance. Par lucidite.
+  </p>
+
+  <h2>Pourquoi refuser un client est parfois la meilleure decision</h2>
+
+  <p>Un mauvais client ne coute pas seulement de l'argent. Il coute du temps, de l'energie, et souvent des opportunites perdues. Pendant que vous gerez des allers-retours interminables avec un prospect difficile, vous n'etes pas disponible pour les bons projets.</p>
+
+  <p>Voici les situations ou refuser est non seulement justifie, mais necessaire :</p>
+
+  <ul>
+    <li><strong>Le budget est irrealiste.</strong> Le client veut un site e-commerce complet pour 500 euros. Negocier ne changera rien : sa perception de la valeur de votre travail est trop eloignee de la realite.</li>
+    <li><strong>Le perimetre est flou.</strong> Il ne sait pas ce qu'il veut, mais il veut que ce soit fait vite. Ce type de projet degenere systematiquement en scope creep.</li>
+    <li><strong>Le comportement est deja problematique.</strong> Messages a 23h, ton agressif, promesses vagues. Si c'est comme ca avant de signer, imaginez pendant le projet.</li>
+    <li><strong>Le projet ne correspond pas a vos competences.</strong> Accepter un projet hors de votre zone d'expertise pour ne pas perdre le client, c'est prendre le risque de livrer un travail mediocre et de ruiner votre reputation.</li>
+  </ul>
+
+  <h2>Les red flags a reperer avant de signer</h2>
+
+  <p>La plupart des mauvaises collaborations etaient previsibles. Les signaux etaient la des les premiers echanges. Voici ceux qui doivent vous alerter :</p>
+
+  <ul>
+    <li><strong>"On verra au fur et a mesure."</strong> Traduction : il n'y aura pas de cadre, et chaque livraison sera suivie de nouvelles demandes non prevues.</li>
+    <li><strong>"Mon precedent prestataire etait nul."</strong> Un client qui parle mal de tous ses anciens freelances fera la meme chose avec vous. Le probleme est rarement toujours du meme cote.</li>
+    <li><strong>"C'est urgent, il faut commencer demain."</strong> L'urgence artificielle est un levier de pression. Un client qui vous met la pression avant meme de signer ne se calmera pas apres.</li>
+    <li><strong>Il negocie chaque ligne du devis.</strong> Discuter d'un prix, c'est normal. Contester chaque poste, demander des remises sur tout, comparer votre tarif a celui d'un stagiaire : c'est un signal que ce client ne valorise pas votre expertise.</li>
+    <li><strong>Il refuse de signer un devis ou un contrat.</strong> "Faites-moi confiance, on se connait." Non. Un professionnel cadre ses engagements par ecrit. Toujours.</li>
+    <li><strong>Les reponses sont evasives.</strong> Vous posez des questions precises sur le budget, les delais, les attentes. Il repond a cote, change de sujet, ou dit qu'il verra plus tard. Cette evasion ne disparaitra pas apres la signature.</li>
+  </ul>
+
+  <div class="warning">
+    <strong>Regle simple :</strong> si vous ressentez un malaise des les premiers echanges, prenez-le au serieux. L'intuition d'un freelance experimente se trompe rarement sur les profils a risque.
+  </div>
+
+  <h2>Comment evaluer un prospect avant de s'engager</h2>
+
+  <p>Avant de dire oui ou non, prenez le temps d'evaluer. Pas besoin d'un interrogatoire : quelques questions suffisent pour se faire une idee claire.</p>
+
+  <ul>
+    <li><strong>Demandez un brief ecrit.</strong> Un client qui est capable de formaliser son besoin par ecrit est un client qui sait ce qu'il veut. S'il refuse ou s'il envoie trois lignes vagues, c'est un signal.</li>
+    <li><strong>Posez des questions sur le budget et les delais.</strong> Pas pour negocier, mais pour verifier que ses attentes sont realistes. Un client qui ne peut pas repondre a ces deux questions n'est pas pret a demarrer un projet.</li>
+    <li><strong>Renseignez-vous.</strong> Cherchez son entreprise, regardez son site, ses avis, son historique. Un minimum de due diligence evite beaucoup de mauvaises surprises.</li>
+    <li><strong>Ecoutez comment il parle de ses anciens prestataires.</strong> S'il n'a que des critiques, demandez-vous pourquoi. Un bon client reconnait que la collaboration est un effort partage.</li>
+  </ul>
+
+  <div class="callout">
+    <h3>Automatisez cette etape</h3>
+    <p>
+      Relire ses echanges, croiser les signaux, evaluer le niveau de risque : ca prend du temps. ClientProof fait cette analyse pour vous. Collez vos conversations avec un prospect et obtenez un score de risque, les red flags detectes, et des recommandations concretes pour decider en connaissance de cause.
+    </p>
+    <p><a href="https://clientproof.fr/app">Analyser un prospect gratuitement &rarr;</a></p>
+  </div>
+
+  <h2>Comment dire non poliment : exemples de messages</h2>
+
+  <p>Refuser un client ne veut pas dire claquer la porte. Voici des modeles de messages adaptes a differentes situations. Copiez-les, adaptez-les, envoyez-les.</p>
+
+  <div class="msg-example">
+    <strong>Budget trop bas</strong>
+    Bonjour [Prenom], merci pour votre confiance et pour le temps passe a m'expliquer le projet. Apres reflexion, je ne suis pas en mesure de vous accompagner sur ce projet dans les conditions evoquees. Le perimetre demanderait un investissement en temps qui depasse le budget prevu. Je prefere etre transparent plutot que de m'engager sur un livrable qui ne serait pas a la hauteur. Je vous souhaite de trouver le bon prestataire.
+  </div>
+
+  <div class="msg-example">
+    <strong>Mauvais feeling / red flags detectes</strong>
+    Bonjour [Prenom], merci d'avoir pense a moi pour ce projet. Apres avoir etudie votre demande, je pense que je ne suis pas la bonne personne pour vous accompagner. Ce n'est pas une question de competence mais d'adequation : je prefere vous orienter vers quelqu'un dont le profil correspondra mieux a vos attentes. Bonne continuation.
+  </div>
+
+  <div class="msg-example">
+    <strong>Projet hors competences</strong>
+    Bonjour [Prenom], merci pour cette proposition. Le projet est interessant, mais il sort de mon domaine d'expertise principal. Plutot que de vous livrer un travail moyen, je prefere vous recommander [Nom / type de profil] qui sera plus adapte a ce besoin. N'hesitez pas a revenir vers moi si vous avez un projet qui correspond davantage a ce que je fais.
+  </div>
+
+  <div class="msg-example">
+    <strong>Planning incompatible</strong>
+    Bonjour [Prenom], merci pour votre interet. Malheureusement, mon planning ne me permet pas de prendre ce projet dans les delais que vous avez en tete. Je prefere decliner plutot que de m'engager sans pouvoir garantir la qualite et la disponibilite que vous meritez. Je reste disponible pour une prochaine collaboration si le timing s'y prete.
+  </div>
+
+  <p>Quelques principes dans tous les cas :</p>
+
+  <ul>
+    <li>Remerciez. Le client vous a choisi, reconnaissez-le.</li>
+    <li>Soyez bref. Pas besoin d'un paragraphe de justification. Plus c'est court, plus c'est clair.</li>
+    <li>Ne laissez pas la porte ouverte si vous ne le souhaitez pas. "Peut-etre plus tard" quand vous pensez "jamais", c'est perdre du temps pour les deux parties.</li>
+    <li>Orientez si possible. Recommander un confrere, c'est professionnel et ca renforce votre image.</li>
+  </ul>
+
+  <h2>Questions frequentes</h2>
+
+  <div class="faq">
+    <div class="faq-item">
+      <h3>Comment refuser un client sans le vexer ?</h3>
+      <p>Remerciez-le pour sa confiance, expliquez brievement pourquoi le projet n'est pas un bon fit (planning, specialisation, perimetre), et orientez-le vers une alternative si possible. Restez bref et professionnel. Ne vous justifiez pas excessivement.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Faut-il toujours donner une raison quand on refuse un prospect ?</h3>
+      <p>Non. Vous n'avez aucune obligation de justifier un refus. Une phrase comme "Je ne suis pas en mesure d'accompagner ce projet dans de bonnes conditions" suffit. Plus vous donnez de details, plus le client essaiera de negocier ou de contourner vos arguments.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Peut-on refuser un client apres avoir envoye un devis ?</h3>
+      <p>Oui, tant que le devis n'est pas signe. Un devis est une proposition, pas un engagement. Si vous detectez des signaux d'alerte apres l'envoi, vous avez le droit de vous retirer. Faites-le rapidement et professionnellement.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Combien de clients un freelance devrait-il refuser ?</h3>
+      <p>Il n'y a pas de chiffre magique. L'objectif n'est pas de refuser pour refuser, mais de filtrer les projets qui vous couteront plus qu'ils ne vous rapporteront. En pratique, beaucoup de freelances experimentes refusent entre 20 et 40% des demandes entrantes.</p>
+    </div>
+  </div>
+
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><a href="https://clientproof.fr">ClientProof</a> &middot; Analysez un prospect avant de signer.</p>
+  </div>
+</footer>
+
+</body>
+</html>

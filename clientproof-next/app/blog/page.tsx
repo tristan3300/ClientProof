@@ -3,6 +3,18 @@ import styles from './page.module.css';
 
 const articles = [
   {
+    title: 'Client toxique freelance : reconnaitre les comportements et se proteger',
+    description:
+      "Comment reconnaitre un client toxique quand on est freelance ? Comportements types, schemas psychologiques et methodes pour s'en proteger avant de signer.",
+    href: '/blog/client-toxique-freelance.html',
+  },
+  {
+    title: 'Refuser un client freelance : quand dire non et comment le faire',
+    description:
+      "Dire non a un prospect quand on est freelance, c'est difficile. Voici comment reperer les red flags, evaluer un client avant de signer, et refuser poliment.",
+    href: '/blog/refuser-client-freelance.html',
+  },
+  {
     title: 'Scope creep freelance : comprendre, stopper et prevenir la derive de perimetre',
     description:
       "Le scope creep est la premiere cause de missions freelance qui derapent. Voici comment le detecter, l'arreter en cours de projet et l'empecher avant de signer.",
@@ -13,6 +25,12 @@ const articles = [
     description:
       "Votre client ne paie pas votre facture ? Voici les etapes concretes pour recuperer votre argent et eviter cette situation a l'avenir.",
     href: '/blog/client-freelance-ne-paie-pas.html',
+  },
+  {
+    title: 'Signaux mauvais client freelance : 8 red flags a reperer avant de signer',
+    description:
+      "Comment reperer un mauvais client avant de signer ? 8 signaux d'alerte concrets, avec des exemples de messages reels et une methode de detection.",
+    href: '/blog/signaux-mauvais-client-freelance.html',
   },
 ];
 
