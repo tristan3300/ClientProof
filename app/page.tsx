@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './page.module.css';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 import LandingInteractions from '../components/LandingInteractions';
 
 export default function Home() {
@@ -634,19 +635,7 @@ export default function Home() {
       </div>
 
       {/* FOOTER */}
-      <footer className={styles.footer}>
-        <div className={styles.container}>
-          <p style={{ marginBottom: '8px' }}>
-            <Link href="/" className={styles.footerLogo}>
-              Client<span className={styles.footerLogoSpan}>Proof</span>
-            </Link>
-          </p>
-          <p className={styles.footerLinks}>
-            <a href="mailto:contact@clientproof.fr">Contact</a>
-          </p>
-          <p className={styles.footerCopy}>© {new Date().getFullYear()} ClientProof. Tous droits réservés.</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

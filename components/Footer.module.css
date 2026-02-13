@@ -1,0 +1,118 @@
+.footer {
+  background: var(--dark);
+  color: #e2e8f0;
+  padding-top: 64px;
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 48px;
+}
+
+/* ---- Brand column ---- */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+.tagline {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 22px;
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  width: fit-content;
+}
+
+.cta:hover {
+  background: var(--red-dark);
+  transform: translateY(-1px);
+}
+
+/* ---- Navigation / Blog columns ---- */
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.col h4 {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px;
+}
+
+.contactTitle {
+  margin-top: 16px !important;
+}
+
+.col a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.col a:hover {
+  color: #fff;
+}
+
+/* ---- Bottom bar ---- */
+.bottom {
+  margin-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.bottom p {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .cta {
+    width: 100%;
+    text-align: center;
+  }
+}

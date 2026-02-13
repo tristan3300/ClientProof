@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 import LoadingOverlay from '@/components/LoadingOverlay';
 import { trackEvent, trackPixel } from '@/lib/tracking';
 import styles from './page.module.css';
@@ -682,9 +683,7 @@ export default function AppPage() {
       </div>
 
       {/* ==================== FOOTER ==================== */}
-      <footer className={styles.footer}>
-        &copy; {new Date().getFullYear()} ClientProof
-      </footer>
+      <Footer />
     </div>
   );
 }

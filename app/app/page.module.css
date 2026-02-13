@@ -945,14 +945,6 @@
   font-weight: 500;
 }
 
-/* ===================== FOOTER ===================== */
-.footer {
-  padding: 40px 24px;
-  text-align: center;
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
 /* ===================== PAGE BACKGROUND ===================== */
 .page {
   background: var(--bg-alt);

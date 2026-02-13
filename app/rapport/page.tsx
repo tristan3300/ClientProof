@@ -4,6 +4,7 @@ import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 import ScoreCircle from '@/components/ScoreCircle';
 import { trackEvent, trackPixel } from '@/lib/tracking';
 import styles from './page.module.css';
@@ -708,11 +709,7 @@ function RapportContent() {
       </div>
 
       {/* ---- Footer ---- */}
-      <footer className={styles.footer}>
-        <div className={styles.container}>
-          <p>&copy; {new Date().getFullYear()} ClientProof &middot; <a href="mailto:contact@clientproof.fr">contact@clientproof.fr</a></p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

@@ -1082,42 +1082,6 @@
   font-weight: 500;
 }
 
-/* ===================== FOOTER ===================== */
-.footer {
-  padding: 40px 0;
-  text-align: center;
-  font-size: 13px;
-  color: var(--text-muted);
-  background: var(--bg-alt);
-  border-top: 1px solid var(--border-light);
-}
-.footerLogo {
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: var(--dark);
-  text-decoration: none;
-  margin-bottom: 8px;
-  display: inline-block;
-}
-.footerLogoSpan {
-  color: var(--red);
-}
-.footerLinks {
-  margin-bottom: 0;
-}
-.footerLinks a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footerLinks a:hover {
-  color: var(--dark);
-}
-.footerCopy {
-  margin-top: 8px;
-}
-
 /* ===================== CONTAINER ===================== */
 .container {
   max-width: 720px;

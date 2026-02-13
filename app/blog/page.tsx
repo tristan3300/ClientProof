@@ -1,4 +1,5 @@
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 import styles from './page.module.css';
 
 const articles = [
@@ -53,9 +54,7 @@ export default function BlogPage() {
           ))}
         </div>
       </div>
-      <footer className={styles.footer}>
-        &copy; {new Date().getFullYear()} ClientProof
-      </footer>
+      <Footer />
     </div>
   );
 }

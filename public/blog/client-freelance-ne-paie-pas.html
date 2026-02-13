@@ -170,13 +170,97 @@
     }
     .faq-item p { margin-bottom: 0; color: #374151; }
     footer {
-      border-top: 1px solid #e5e7eb;
-      padding: 24px 0;
-      text-align: center;
-      font-size: 13px;
-      color: #9ca3af;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding-top: 64px;
     }
-    footer a { color: #dc2626; text-decoration: none; }
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 48px;
+    }
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-logo {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-logo span { color: #dc2626; }
+    .footer-tagline {
+      color: #94a3b8;
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .footer-cta {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 22px;
+      background: #dc2626;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+      width: fit-content;
+    }
+    .footer-cta:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col h4 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 4px;
+    }
+    .footer-col h4.contact-title { margin-top: 16px; }
+    .footer-col a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      margin-top: 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .footer-bottom p {
+      max-width: 960px;
+      margin: 0 auto;
+      font-size: 13px;
+      color: #64748b;
+    }
+    @media (max-width: 768px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .footer-cta {
+        width: 100%;
+        text-align: center;
+      }
+    }
     @media (max-width: 600px) {
       h1 { font-size: 26px; }
       h2 { font-size: 20px; }
@@ -445,8 +529,32 @@
 </div>
 
 <footer>
-  <div class="wrap">
-    <p><a href="https://clientproof.fr">ClientProof</a> &middot; Analysez un prospect avant de signer.</p>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="https://clientproof.fr" class="footer-logo">Client<span>Proof</span></a>
+      <p class="footer-tagline">Analysez vos prospects avant de signer.</p>
+      <a href="https://clientproof.fr/app" class="footer-cta">Analyser gratuitement &rarr;</a>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="https://clientproof.fr/#method">Comment ca marche</a>
+      <a href="https://clientproof.fr/#pricing">Tarif</a>
+      <a href="https://clientproof.fr/#faq">FAQ</a>
+      <a href="https://clientproof.fr/blog">Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4>Blog</h4>
+      <a href="https://clientproof.fr/blog/client-toxique-freelance.html">Client toxique freelance</a>
+      <a href="https://clientproof.fr/blog/refuser-client-freelance.html">Refuser un client freelance</a>
+      <a href="https://clientproof.fr/blog/scope-creep-freelance.html">Scope creep freelance</a>
+      <a href="https://clientproof.fr/blog/client-freelance-ne-paie-pas.html">Client qui ne paie pas</a>
+      <a href="https://clientproof.fr/blog/signaux-mauvais-client-freelance.html">Signaux mauvais client</a>
+      <h4 class="contact-title">Contact</h4>
+      <a href="mailto:contact@clientproof.fr">contact@clientproof.fr</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 ClientProof. Tous droits reserves.</p>
   </div>
 </footer>
 

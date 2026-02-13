@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import { trackEvent } from "@/lib/tracking";
 import styles from "./page.module.css";
 
@@ -67,7 +68,7 @@ export default function MerciPage() {
         </div>
       </div>
 
-      <footer className={styles.footer}>&copy; {new Date().getFullYear()} ClientProof</footer>
+      <Footer />
     </>
   );
 }
