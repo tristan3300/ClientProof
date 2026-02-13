@@ -22,7 +22,9 @@ export async function POST(req: NextRequest) {
   const id = uuidv4();
 
   try {
+    console.log("[analyze-free] Starting OpenAI call...");
     const analysis = await generateFreeAnalysis(conversation);
+    console.log("[analyze-free] OpenAI OK, saving to Supabase...");
 
     // Save to Supabase
     const { error: insertError } = await supabase.from("analyses").insert({
@@ -34,10 +36,14 @@ export async function POST(req: NextRequest) {
     });
 
     if (insertError) {
-      console.error("Supabase insert error:", insertError);
-      throw new Error("Database error");
+      console.error("[analyze-free] Supabase insert error:", insertError);
+      return NextResponse.json(
+        { error: "Erreur base de données: " + insertError.message },
+        { status: 500 }
+      );
     }
 
+    console.log("[analyze-free] Success, id:", id);
     return NextResponse.json({
       id,
       score: analysis.score,
@@ -45,9 +51,10 @@ export async function POST(req: NextRequest) {
       summary: analysis.summary,
     });
   } catch (err) {
-    console.error("Free analysis error:", err);
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("[analyze-free] Error:", message);
     return NextResponse.json(
-      { error: "Erreur lors de l'analyse. Veuillez réessayer." },
+      { error: "Erreur: " + message },
       { status: 500 }
     );
   }
