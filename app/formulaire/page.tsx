@@ -90,7 +90,7 @@ export default function FormulairePage() {
         </div>
       </div>
 
-      <footer className={styles.footer}>&copy; 2025 ClientProof</footer>
+      <footer className={styles.footer}>&copy; {new Date().getFullYear()} ClientProof</footer>
     </>
   );
 }

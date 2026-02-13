@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
         {
           price_data: {
             currency: "eur",
-            unit_amount: 100, // 1 euro en centimes - changer a 2900 pour 29 euros
+            unit_amount: 2400, // 24 euros en centimes
             product_data: {
               name: "ClientProof - Analyse complete",
               description:

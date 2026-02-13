@@ -16,9 +16,22 @@ export const metadata: Metadata = {
     template: "%s | ClientProof",
   },
   description:
-    "ClientProof analyse votre prospect avant la signature. Score de risque, red flags, clauses à ajouter. 1€ pour éviter des mois de galère.",
+    "ClientProof analyse votre prospect avant la signature. Score de risque, red flags, clauses à ajouter. 24 € pour éviter des mois de galère.",
   icons: {
     icon: "/favicon.svg",
+  },
+  openGraph: {
+    title: "ClientProof - Analysez un prospect avant de signer",
+    description: "Score de risque, red flags, clauses a ajouter. 24 € pour eviter des mois de galere.",
+    url: "https://clientproof.fr",
+    siteName: "ClientProof",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ClientProof - Analysez un prospect avant de signer",
+    description: "Score de risque, red flags, clauses a ajouter. 24 € pour eviter des mois de galere.",
   },
 };
 

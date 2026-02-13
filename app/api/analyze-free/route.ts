@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   const supabase = getSupabase();
   const { conversation } = await req.json();
 
-  if (!conversation || conversation.trim().length < 20) {
+  if (!conversation || conversation.trim().length < 20 || conversation.length > 50000) {
     return NextResponse.json(
       {
         error:
@@ -22,9 +22,7 @@ export async function POST(req: NextRequest) {
   const id = uuidv4();
 
   try {
-    console.log("[analyze-free] Starting OpenAI call...");
     const analysis = await generateFreeAnalysis(conversation);
-    console.log("[analyze-free] OpenAI OK, saving to Supabase...");
 
     // Save to Supabase
     const { error: insertError } = await supabase.from("analyses").insert({
@@ -43,7 +41,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    console.log("[analyze-free] Success, id:", id);
     return NextResponse.json({
       id,
       score: analysis.score,

@@ -600,7 +600,7 @@ export default function AppPage() {
                 </button>
 
                 <div className={styles.ctaTrustLine}>
-                  <span>Paiement unique - 1&nbsp;&euro;</span>
+                  <span>Paiement unique - 24&nbsp;&euro;</span>
                   <span className={styles.ctaTrustSep} />
                   <span>Rapport instantan&eacute;</span>
                   <span className={styles.ctaTrustSep} />
@@ -674,7 +674,7 @@ export default function AppPage() {
             if (result) startCheckout(result.id);
           }}
         >
-          Obtenir mon analyse compl&egrave;te - 1&nbsp;&euro; &rarr;
+          Obtenir mon analyse compl&egrave;te - 24&nbsp;&euro; &rarr;
         </button>
         <div className={styles.stickySub}>
           Paiement unique &bull; Rembours&eacute; si non satisfait
@@ -683,7 +683,7 @@ export default function AppPage() {
 
       {/* ==================== FOOTER ==================== */}
       <footer className={styles.footer}>
-        &copy; 2025 ClientProof
+        &copy; {new Date().getFullYear()} ClientProof
       </footer>
     </div>
   );

@@ -38,7 +38,7 @@ export default function Home() {
               Analyser mon prospect gratuitement
             </Link>
             <span className={styles.ctaSub}>
-              Aperçu gratuit en 30 secondes - Rapport complet à 1 €
+              Aperçu gratuit en 30 secondes - Rapport complet à 24 €
             </span>
             <div className={styles.trustRow}>
               <div className={styles.trustItem}>
@@ -419,7 +419,7 @@ export default function Home() {
           <div className={`${styles.reveal} ${styles.pricingCenter}`}>
             <span className={styles.sectionLabel}>Tarif unique</span>
             <h2 className={styles.sectionTitle}>
-              1 €, c&apos;est le prix d&apos;une décision éclairée.<br />Un mauvais client, c&apos;est un autre budget.
+              24 €, c&apos;est le prix d&apos;une décision éclairée.<br />Un mauvais client, c&apos;est un autre budget.
             </h2>
           </div>
 
@@ -430,7 +430,7 @@ export default function Home() {
                   Un mauvais client coûte généralement entre 500 € et 3 000 € de temps perdu.
                 </div>
                 <div className={styles.pricingAmount}>
-                  1<small className={styles.pricingAmountSmall}>€</small>
+                  24<small className={styles.pricingAmountSmall}>€</small>
                 </div>
                 <div className={styles.pricingPer}>par prospect analysé - paiement unique</div>
               </div>
@@ -510,7 +510,7 @@ export default function Home() {
               </button>
               <div className={styles.faqA}>
                 <div className={styles.faqAInner}>
-                  Tant mieux. Le rapport vous confirmera les bons signaux et vous donnera quand même des clauses de protection standard. Savoir qu&apos;un prospect est sûr, c&apos;est aussi de l&apos;information qui vaut 1 €.
+                  Tant mieux. Le rapport vous confirmera les bons signaux et vous donnera quand même des clauses de protection standard. Savoir qu&apos;un prospect est sûr, c&apos;est aussi de l&apos;information qui vaut 24 €.
                 </div>
               </div>
             </div>
@@ -601,7 +601,7 @@ export default function Home() {
             <Link href="/app" className={`${styles.finalCtaCtaMain} ${styles.ctaPulse}`}>
               Analyser mon prospect gratuitement
             </Link>
-            <span className={styles.finalCtaSub}>Aperçu gratuit instantané - Rapport complet à 1 €</span>
+            <span className={styles.finalCtaSub}>Aperçu gratuit instantané - Rapport complet à 24 €</span>
             <div className={styles.finalCtaTrustRow}>
               <div className={styles.finalCtaTrustItem}>
                 <span className={styles.finalCtaTrustIcon}>
@@ -651,9 +651,9 @@ export default function Home() {
             </Link>
           </p>
           <p className={styles.footerLinks}>
-            <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="mailto:contact@clientproof.fr">Contact</a>
+            <a href="mailto:contact@clientproof.fr">Contact</a>
           </p>
-          <p className={styles.footerCopy}>© 2025 ClientProof. Tous droits réservés.</p>
+          <p className={styles.footerCopy}>© {new Date().getFullYear()} ClientProof. Tous droits réservés.</p>
         </div>
       </footer>
     </>

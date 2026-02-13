@@ -3,11 +3,20 @@ import { getStripe } from "@/lib/stripe";
 import { getSupabase } from "@/lib/supabase";
 import { generateFullAnalysis } from "@/lib/analysis";
 
+export const maxDuration = 60;
+
 export async function POST(req: NextRequest) {
   const supabase = getSupabase();
   const stripe = getStripe();
   const body = await req.text();
-  const sig = req.headers.get("stripe-signature")!;
+  const sig = req.headers.get("stripe-signature");
+
+  if (!sig) {
+    return NextResponse.json(
+      { error: "Missing stripe-signature header" },
+      { status: 400 }
+    );
+  }
 
   let event;
   try {
@@ -50,9 +59,6 @@ export async function POST(req: NextRequest) {
             .from("analyses")
             .update({ full_analysis: fullAnalysis })
             .eq("id", analysisId);
-          console.log(
-            `Analysis ${analysisId} marked as paid and full report generated.`
-          );
         } catch (err) {
           console.error(
             "Full analysis generation failed:",

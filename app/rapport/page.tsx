@@ -163,7 +163,7 @@ function RapportContent() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const w = window as any;
       if (typeof w.fbq === 'function') {
-        w.fbq('track', 'Purchase', { value: 1.00, currency: 'EUR' });
+        w.fbq('track', 'Purchase', { value: 24.00, currency: 'EUR' });
       }
     } catch {
       // Network error - retry
@@ -259,7 +259,7 @@ function RapportContent() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const w2 = window as any;
       if (typeof w2.fbq === 'function') {
-        w2.fbq('track', 'Purchase', { value: 9.00, currency: 'EUR' });
+        w2.fbq('track', 'Purchase', { value: 24.00, currency: 'EUR' });
       }
     } catch {
       showError('Erreur de chargement', 'Impossible de charger le rapport. Veuillez réessayer.');

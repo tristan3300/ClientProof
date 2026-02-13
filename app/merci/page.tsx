@@ -29,7 +29,7 @@ export default function MerciPage() {
               <div className={styles.timelineNum}>1</div>
               <div className={styles.timelineText}>
                 <h3>Paiement confirmé</h3>
-                <p>9 euros - carte bancaire</p>
+                <p>24 euros - carte bancaire</p>
               </div>
             </div>
             <div className={`${styles.timelineStep} ${styles.done}`}>
@@ -62,7 +62,7 @@ export default function MerciPage() {
         </div>
       </div>
 
-      <footer className={styles.footer}>&copy; 2025 ClientProof</footer>
+      <footer className={styles.footer}>&copy; {new Date().getFullYear()} ClientProof</footer>
     </>
   );
 }
