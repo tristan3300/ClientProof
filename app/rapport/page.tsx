@@ -3,6 +3,7 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Nav from '@/components/Nav';
 import ScoreCircle from '@/components/ScoreCircle';
 import { trackEvent, trackPixel } from '@/lib/tracking';
 import styles from './page.module.css';
@@ -100,11 +101,7 @@ function riskTagClass(riskLevel: string): string {
 function Loading() {
   return (
     <>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>
-          Client<span className={styles.logoAccent}>Proof</span>
-        </Link>
-      </nav>
+      <Nav />
       <div className={styles.stateScreen}>
         <div className={styles.stateCard}>
           <div className={styles.loader} />
@@ -463,11 +460,7 @@ function RapportContent() {
 
   return (
     <>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>
-          Client<span className={styles.logoAccent}>Proof</span>
-        </Link>
-      </nav>
+      <Nav />
 
       <div className={styles.report}>
         <div className={styles.container}>

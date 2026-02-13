@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './page.module.css';
+import Nav from '../components/Nav';
 import LandingInteractions from '../components/LandingInteractions';
 
 export default function Home() {
@@ -7,17 +8,7 @@ export default function Home() {
     <>
       <LandingInteractions />
 
-      {/* NAV */}
-      <nav id="landing-nav" className={styles.nav}>
-        <div className={styles.navInner}>
-          <Link href="/" className={styles.logo}>
-            Client<span className={styles.logoSpan}>Proof</span>
-          </Link>
-          <Link href="/app" className={styles.ctaNav}>
-            Analyser gratuitement
-          </Link>
-        </div>
-      </nav>
+      <Nav />
 
       {/* HERO */}
       <section className={styles.hero}>

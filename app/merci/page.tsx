@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import Nav from "@/components/Nav";
 import { trackEvent } from "@/lib/tracking";
 import styles from "./page.module.css";
 
@@ -12,11 +13,7 @@ export default function MerciPage() {
 
   return (
     <>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>
-          Client<span>Proof</span>
-        </Link>
-      </nav>
+      <Nav />
 
       <div className={styles.main}>
         <div className={styles.card}>
