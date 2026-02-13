@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 import { generateFullAnalysis } from "@/lib/analysis";
 
 export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
+  const supabase = getSupabase();
   const { id } = await req.json();
 
   if (!id) {

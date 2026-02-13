@@ -1,4 +1,4 @@
-import { openai } from "./openai";
+import { getOpenAI } from "./openai";
 import type { FreeAnalysis, FullAnalysis } from "@/types";
 
 function parseAIResponse<T>(raw: string): T {
@@ -16,6 +16,7 @@ function parseAIResponse<T>(raw: string): T {
 export async function generateFreeAnalysis(
   conversation: string
 ): Promise<FreeAnalysis> {
+  const openai = getOpenAI();
   const completion = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0.3,
@@ -46,6 +47,7 @@ Analyse la conversation suivante et retourne UNIQUEMENT un JSON valide (sans mar
 export async function generateFullAnalysis(
   conversation: string
 ): Promise<FullAnalysis> {
+  const openai = getOpenAI();
   const completion = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0.4,

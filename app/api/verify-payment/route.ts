@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
-import { supabase } from "@/lib/supabase";
+import { getStripe } from "@/lib/stripe";
+import { getSupabase } from "@/lib/supabase";
 
 export async function POST(req: NextRequest) {
+  const supabase = getSupabase();
+  const stripe = getStripe();
   try {
     const { sessionId, analysisId, conversation, freeAnalysis } =
       await req.json();

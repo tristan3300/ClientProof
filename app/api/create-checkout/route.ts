@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 
 export async function POST(req: NextRequest) {
+  const stripe = getStripe();
   const { analysisId } = await req.json();
 
   if (!analysisId) {
