@@ -234,6 +234,93 @@
       h2 { font-size: 20px; }
       body { font-size: 16px; }
     }
+    .cta-inline {
+      color: #dc2626;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid #fecaca;
+      transition: border-color 0.2s;
+    }
+    .cta-inline:hover { border-bottom-color: #dc2626; }
+    .cta-final {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .cta-final h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .cta-final p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .cta-final .cta-btn {
+      display: inline-block;
+      background: #dc2626;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-final .cta-btn:hover {
+      background: #b91c1c;
+      transform: translateY(-2px);
+    }
+    .cta-final .cta-sub {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      z-index: 999;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta p {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin: 0;
+      font-weight: 500;
+    }
+    .sticky-cta .sticky-btn {
+      background: #dc2626;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .sticky-cta .sticky-btn:hover { background: #b91c1c; }
+    @media (max-width: 600px) {
+      .sticky-cta p { display: none; }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -316,7 +403,7 @@
 
   <h2>Les 5 comportements types d'un client toxique</h2>
 
-  <p>Un client difficile demande beaucoup, mais respecte les regles. Un client toxique reecrit les regles a son avantage. Voici les profils que les freelances rencontrent le plus souvent.</p>
+  <p>Un client difficile demande beaucoup, mais respecte les regles. Un client toxique reecrit les regles a son avantage. Voici les profils que les freelances rencontrent le plus souvent — et que des outils comme <a href="https://clientproof.fr/app" class="cta-inline">ClientProof detectent dans vos echanges</a> avant la signature.</p>
 
   <div class="profile">
     <div class="profile-name">Le micro-manager intrusif</div>
@@ -416,6 +503,13 @@
 
   <p>Ces clauses ne guerissent pas un client toxique. Elles vous donnent une sortie legale quand le comportement se confirme. Et dans la plupart des cas, le simple fait de les proposer suffit a faire fuir les profils les plus problematiques : un client toxique fuit les cadres ecrits autant qu'un client sain les respecte.</p>
 
+  <div class="cta-final">
+    <h3>Ne signez pas avant d'avoir analyse</h3>
+    <p>Collez vos echanges avec un prospect. En 30 secondes, obtenez un score de risque, les red flags detectes et les clauses a ajouter a votre contrat.</p>
+    <a href="https://clientproof.fr/app" class="cta-btn">Analyser mon prospect gratuitement</a>
+    <span class="cta-sub">Gratuit, sans inscription, resultats en 30 secondes</span>
+  </div>
+
   <h2>Questions frequentes</h2>
 
   <div class="faq">
@@ -433,7 +527,7 @@
     </div>
     <div class="faq-item">
       <h3>Combien coute un client toxique a un freelance ?</h3>
-      <p>Entre le travail non facture (scope creep), les retards de paiement, le temps passe a gerer les conflits et le cout d'opportunite (projets refuses faute de disponibilite), un seul client toxique coute en moyenne entre 2 000 et 10 000 euros. Sans compter l'impact sur votre sante mentale et votre confiance professionnelle.</p>
+      <p>Entre le travail non facture (scope creep), les retards de paiement, le temps passe a gerer les conflits et le cout d'opportunite (projets refuses faute de disponibilite), un seul client toxique coute en moyenne entre 2 000 et 10 000 euros. Sans compter l'impact sur votre sante mentale et votre confiance professionnelle. C'est pourquoi <a href="https://clientproof.fr/app" class="cta-inline">analyser un prospect avant de signer</a> est l'investissement le plus rentable qu'un freelance puisse faire.</p>
     </div>
   </div>
 
@@ -446,5 +540,19 @@
   </div>
 </footer>
 
+<div class="sticky-cta" id="stickyCta">
+  <p>Un doute sur votre prochain client ?</p>
+  <a href="https://clientproof.fr/app" class="sticky-btn">Analyser gratuitement &rarr;</a>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('stickyCta'),ft=document.querySelector('footer');
+  window.addEventListener('scroll',function(){
+    if(!bar)return;
+    var show=window.scrollY>500&&(!ft||ft.getBoundingClientRect().top>window.innerHeight);
+    bar.classList.toggle('visible',show);
+  });
+})();
+</script>
 </body>
 </html>

@@ -209,6 +209,93 @@
       h3 { font-size: 17px; }
       body { font-size: 16px; }
     }
+    .cta-inline {
+      color: #dc2626;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid #fecaca;
+      transition: border-color 0.2s;
+    }
+    .cta-inline:hover { border-bottom-color: #dc2626; }
+    .cta-final {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .cta-final h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .cta-final p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .cta-final .cta-btn {
+      display: inline-block;
+      background: #dc2626;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-final .cta-btn:hover {
+      background: #b91c1c;
+      transform: translateY(-2px);
+    }
+    .cta-final .cta-sub {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      z-index: 999;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta p {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin: 0;
+      font-weight: 500;
+    }
+    .sticky-cta .sticky-btn {
+      background: #dc2626;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .sticky-cta .sticky-btn:hover { background: #b91c1c; }
+    @media (max-width: 600px) {
+      .sticky-cta p { display: none; }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -291,7 +378,7 @@
 
   <h2>Les 8 red flags dans les messages d'un prospect</h2>
 
-  <p>Chaque signal ci-dessous est tire de situations reelles. Pour chacun, un exemple de message type et ce qu'il revele.</p>
+  <p>Chaque signal ci-dessous est tire de situations reelles. Pour chacun, un exemple de message type et ce qu'il revele. Si vous voulez aller plus vite, <a href="https://clientproof.fr/app" class="cta-inline">collez vos echanges dans ClientProof</a> pour une analyse automatique.</p>
 
   <h3>1. Le budget fantome</h3>
 
@@ -387,11 +474,18 @@
 
   <ul>
     <li><strong>Un ou deux signaux faibles :</strong> vous pouvez accepter le projet, mais blindez votre contrat. Ajoutez des clauses sur le nombre de retours, les delais de paiement, le perimetre exact. Augmentez votre tarif pour compenser le risque.</li>
-    <li><strong>Deux signaux forts ou trois signaux faibles :</strong> declinez. Le cout probable (temps perdu, impaye, stress) depasse largement le gain potentiel. Orientez le client vers un autre prestataire si vous le souhaitez.</li>
+    <li><strong>Deux signaux forts ou trois signaux faibles :</strong> declinez. Le cout probable (temps perdu, impaye, stress) depasse largement le gain potentiel. <a href="https://clientproof.fr/app" class="cta-inline">Faites une analyse ClientProof</a> pour confirmer votre intuition. Orientez le client vers un autre prestataire si vous le souhaitez.</li>
     <li><strong>Red flags critiques (refus de contrat, menaces, denigrement) :</strong> refusez immediatement et ne laissez pas la porte ouverte. Ces comportements ne s'ameliorent pas avec le temps.</li>
   </ul>
 
   <p>Le reflexe a construire est simple : chaque nouveau prospect passe par un filtre. Pas un interrogatoire. Pas une grille de 50 criteres. Juste une relecture attentive de vos premiers echanges, avec les bons signaux en tete. Les cinq minutes que ca prend peuvent vous epargner des mois de regrets.</p>
+
+  <div class="cta-final">
+    <h3>Analysez vos echanges avant de signer</h3>
+    <p>Collez vos messages avec un prospect. ClientProof detecte les red flags, calcule un score de risque et vous dit quoi ajouter a votre contrat.</p>
+    <a href="https://clientproof.fr/app" class="cta-btn">Analyser mon prospect gratuitement</a>
+    <span class="cta-sub">Gratuit, sans inscription, resultats en 30 secondes</span>
+  </div>
 
   <h2>Questions frequentes</h2>
 
@@ -423,5 +517,19 @@
   </div>
 </footer>
 
+<div class="sticky-cta" id="stickyCta">
+  <p>Un doute sur votre prochain client ?</p>
+  <a href="https://clientproof.fr/app" class="sticky-btn">Analyser gratuitement &rarr;</a>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('stickyCta'),ft=document.querySelector('footer');
+  window.addEventListener('scroll',function(){
+    if(!bar)return;
+    var show=window.scrollY>500&&(!ft||ft.getBoundingClientRect().top>window.innerHeight);
+    bar.classList.toggle('visible',show);
+  });
+})();
+</script>
 </body>
 </html>
