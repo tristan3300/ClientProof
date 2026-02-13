@@ -3,9 +3,9 @@ import styles from './page.module.css';
 
 const articles = [
   {
-    title: 'Client toxique freelance : reconnaitre les comportements et se proteger',
+    title: 'Client toxique freelance : comportements, mecanismes psychologiques et prevention',
     description:
-      "Comment reconnaitre un client toxique quand on est freelance ? Comportements types, schemas psychologiques et methodes pour s'en proteger avant de signer.",
+      "Comment identifier un client toxique avant de signer ? 5 profils types, schemas psychologiques sous-jacents, consequences reelles et methode de prevention pour freelances.",
     href: '/blog/client-toxique-freelance.html',
   },
   {
