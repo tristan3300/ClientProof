@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
       .single();
 
     if (!existing && conversation) {
-      // Record lost or never saved — recreate from client data
+      // Record lost or never saved - recreate from client data
       await supabase.from("analyses").insert({
         id: analysisId,
         conversation,

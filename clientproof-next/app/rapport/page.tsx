@@ -348,7 +348,7 @@ function RapportContent() {
       // Restore .noPrint elements
       noPrintEls.forEach((el) => ((el as HTMLElement).style.display = ''));
     } catch {
-      // Silently fail — user can retry
+      // Silently fail - user can retry
     } finally {
       setIsExporting(false);
     }
@@ -358,7 +358,7 @@ function RapportContent() {
 
   const handleShare = async () => {
     const shareData = {
-      title: 'ClientProof — Analyse de prospect',
+      title: 'ClientProof - Analyse de prospect',
       text: 'J\'ai analysé mon prospect avec ClientProof. Essaie, c\'est ultra utile pour les freelances !',
       url: 'https://clientproof.fr',
     };
@@ -367,7 +367,7 @@ function RapportContent() {
       try {
         await navigator.share(shareData);
       } catch {
-        // User cancelled or API error — ignore
+        // User cancelled or API error - ignore
       }
     } else {
       await navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
@@ -496,7 +496,7 @@ function RapportContent() {
             <div className={styles.reportHeaderCard}>
               <div className={styles.reportTopRow}>
                 <span className={styles.reportLogo}>
-                  Client<span className={styles.reportLogoAccent}>Proof</span> — Rapport d&apos;analyse
+                  Client<span className={styles.reportLogoAccent}>Proof</span> - Rapport d&apos;analyse
                 </span>
                 <span className={styles.reportDate}>{dateStr}</span>
               </div>
