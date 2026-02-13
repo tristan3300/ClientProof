@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import LoadingOverlay from '@/components/LoadingOverlay';
+import { trackEvent, trackPixel } from '@/lib/tracking';
 import styles from './page.module.css';
 
 /* ------------------------------------------------------------------ */
@@ -43,6 +44,7 @@ export default function AppPage() {
   const [stickyVisible, setStickyVisible] = useState(false);
 
   /* refs */
+  const textareaStartedRef = useRef(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const resultSectionRef = useRef<HTMLDivElement>(null);
   const resultTeaserRef = useRef<HTMLDivElement>(null);
@@ -78,6 +80,12 @@ export default function AppPage() {
   const handleTextareaInput = useCallback(() => {
     if (!textareaRef.current) return;
     const len = textareaRef.current.value.length;
+
+    if (!textareaStartedRef.current && len > 0) {
+      textareaStartedRef.current = true;
+      trackEvent('textarea_start');
+    }
+
     setCharCount(len);
 
     const progress = Math.min((len / 400) * 100, 100);
@@ -209,16 +217,8 @@ export default function AppPage() {
       setTimeout(() => displayResult(data), 500);
 
       // Track conversion
-      if (typeof window !== 'undefined') {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const w = window as any;
-        if (typeof w.gtag === 'function') {
-          w.gtag('event', 'free_analysis', { event_category: 'engagement' });
-        }
-        if (typeof w.fbq === 'function') {
-          w.fbq('track', 'Lead');
-        }
-      }
+      trackEvent('free_analysis', { event_category: 'engagement' });
+      trackPixel('Lead');
     } catch (err: unknown) {
       setLoadingActive(false);
       const message = err instanceof Error ? err.message : 'Une erreur est survenue. Veuillez r\u00e9essayer.';
@@ -230,6 +230,8 @@ export default function AppPage() {
 
   /* ---- checkout ---- */
   const startCheckout = useCallback(async (analysisId: string) => {
+    trackEvent('initiate_checkout', { value: 24, currency: 'EUR' });
+    trackPixel('InitiateCheckout', { value: 24, currency: 'EUR' });
     try {
       const testSecret = new URLSearchParams(window.location.search).get('test') || undefined;
       const res = await fetch('/api/create-checkout', {
@@ -264,6 +266,7 @@ export default function AppPage() {
 
   /* ---- copy share link ---- */
   const copyShareLink = useCallback(() => {
+    trackEvent('share_link_copy');
     navigator.clipboard.writeText(window.location.origin + '/app').then(() => {
       setCopyLinkState(true);
       setTimeout(() => setCopyLinkState(false), 2000);

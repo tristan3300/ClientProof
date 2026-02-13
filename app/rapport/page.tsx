@@ -4,6 +4,7 @@ import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import ScoreCircle from '@/components/ScoreCircle';
+import { trackEvent, trackPixel } from '@/lib/tracking';
 import styles from './page.module.css';
 
 /* ------------------------------------------------------------------ */
@@ -160,11 +161,8 @@ function RapportContent() {
       try { localStorage.removeItem('cp_analysis'); } catch { /* ignore */ }
 
       // Track conversion
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const w = window as any;
-      if (typeof w.fbq === 'function') {
-        w.fbq('track', 'Purchase', { value: 24.00, currency: 'EUR' });
-      }
+      trackEvent('purchase', { value: 24, currency: 'EUR' });
+      trackPixel('Purchase', { value: 24, currency: 'EUR' });
     } catch {
       // Network error - retry
       timerRef.current = setTimeout(pollReport, 3000);
@@ -256,11 +254,8 @@ function RapportContent() {
       setView({ kind: 'report', data });
 
       // Track conversion
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const w2 = window as any;
-      if (typeof w2.fbq === 'function') {
-        w2.fbq('track', 'Purchase', { value: 24.00, currency: 'EUR' });
-      }
+      trackEvent('purchase', { value: 24, currency: 'EUR' });
+      trackPixel('Purchase', { value: 24, currency: 'EUR' });
     } catch {
       showError('Erreur de chargement', 'Impossible de charger le rapport. Veuillez réessayer.');
     }
@@ -284,6 +279,14 @@ function RapportContent() {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
   }, [analysisId, sessionId, verifyAndLoad, loadReport, showError]);
+
+  /* ---------- report view tracking ---------- */
+
+  useEffect(() => {
+    if (view.kind !== 'report') return;
+    trackEvent('report_view');
+    trackPixel('ViewContent');
+  }, [view.kind]);
 
   /* ---------- scroll reveal ---------- */
 
@@ -310,6 +313,7 @@ function RapportContent() {
   /* ---------- copy handler ---------- */
 
   const handleCopy = (text: string) => {
+    trackEvent('message_copy');
     navigator.clipboard.writeText(text).then(() => {
       setCopyLabel('Copié !');
       setTimeout(() => setCopyLabel('Copier'), 2000);
@@ -320,6 +324,7 @@ function RapportContent() {
 
   const handleDownloadPdf = async () => {
     if (!reportRef.current || isExporting) return;
+    trackEvent('pdf_download');
     setIsExporting(true);
 
     try {
@@ -357,7 +362,9 @@ function RapportContent() {
 
   /* ---------- share handler ---------- */
 
-  const handleShare = async () => {
+  const handleShare = async (method?: string) => {
+    trackEvent('report_share', { method: method || 'native' });
+
     const shareData = {
       title: 'ClientProof - Analyse de prospect',
       text: 'J\'ai analysé mon prospect avec ClientProof. Essaie, c\'est ultra utile pour les freelances !',
@@ -650,7 +657,7 @@ function RapportContent() {
               Ce rapport vous a aid&eacute; ? Partagez ClientProof avec un coll&egrave;gue freelance.
             </p>
             <div className={styles.shareButtons}>
-              <button className={styles.shareBtn} onClick={handleShare}>
+              <button className={styles.shareBtn} onClick={() => handleShare('native')}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="18" cy="5" r="3" />
                   <circle cx="6" cy="12" r="3" />
@@ -665,6 +672,7 @@ function RapportContent() {
                 href="https://twitter.com/intent/tweet?text=Je%20viens%20d%27analyser%20mon%20prospect%20avec%20ClientProof%20%F0%9F%94%8D%20Ultra%20utile%20pour%20les%20freelances%20!&url=https%3A%2F%2Fclientproof.fr"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('report_share', { method: 'twitter' })}
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -676,6 +684,7 @@ function RapportContent() {
                 href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fclientproof.fr"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('report_share', { method: 'linkedin' })}
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />

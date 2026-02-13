@@ -2,10 +2,14 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { trackEvent, trackPixel } from "@/lib/tracking";
 import styles from "./page.module.css";
 
 export default function FormulairePage() {
   useEffect(() => {
+    trackEvent('form_view');
+    trackPixel('ViewContent');
+
     // Redirect to merci when Tally form is submitted
     function handleMessage(e: MessageEvent) {
       let data = e.data;
@@ -23,6 +27,8 @@ export default function FormulairePage() {
           data.type === "Tally.FormSubmitted" ||
           data.type === "Tally.Submitted")
       ) {
+        trackEvent('form_submit');
+        trackPixel('CompleteRegistration');
         window.location.href = "/merci";
       }
     }

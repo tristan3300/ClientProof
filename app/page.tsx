@@ -34,7 +34,7 @@ export default function Home() {
             Collez vos échanges, obtenez un aperçu gratuit en 30 secondes. Score de risque, red flags, recommandations, message prêt à envoyer.
           </p>
           <div className={styles.heroCtaWrap}>
-            <Link href="/app" className={`${styles.ctaMain} ${styles.ctaPulse}`}>
+            <Link href="/app" className={`${styles.ctaMain} ${styles.ctaPulse}`} data-track-cta="hero">
               Analyser mon prospect gratuitement
             </Link>
             <span className={styles.ctaSub}>
@@ -169,7 +169,7 @@ export default function Home() {
               Chaque mauvais client coûte entre <strong>1 000 et 10 000 €</strong>.<br />
               En argent, en temps, en énergie. Parfois les trois.
             </p>
-            <Link href="/app" className={styles.painSummaryCtaMain}>
+            <Link href="/app" className={styles.painSummaryCtaMain} data-track-cta="pain">
               Analyser gratuitement
             </Link>
           </div>
@@ -292,7 +292,7 @@ export default function Home() {
           </div>
 
           <div className={`${styles.ctaBlock} ${styles.reveal}`}>
-            <Link href="/app" className={styles.ctaMain}>
+            <Link href="/app" className={styles.ctaMain} data-track-cta="example">
               Obtenir ce type de rapport
             </Link>
             <span className={styles.ctaSub}>Pour votre propre prospect, pas un exemple fictif</span>
@@ -370,7 +370,7 @@ export default function Home() {
           </div>
 
           <div className={`${styles.ctaBlock} ${styles.reveal}`}>
-            <Link href="/app" className={styles.ctaMain}>
+            <Link href="/app" className={styles.ctaMain} data-track-cta="deliverables">
               Obtenir mon rapport
             </Link>
           </div>
@@ -458,7 +458,7 @@ export default function Home() {
                     <span className={styles.check}>✓</span> Livré en PDF en moins de 24h
                   </li>
                 </ul>
-                <Link href="/app" className={`${styles.pricingBodyCtaMain} ${styles.ctaPulse}`}>
+                <Link href="/app" className={`${styles.pricingBodyCtaMain} ${styles.ctaPulse}`} data-track-cta="pricing">
                   Analyser mon prospect
                   <span>→</span>
                 </Link>
@@ -598,7 +598,7 @@ export default function Home() {
             <p className={styles.finalCtaIntro}>
               Pas un abonnement. Pas un logiciel. Juste un rapport clair pour prendre la bonne décision avant de vous engager.
             </p>
-            <Link href="/app" className={`${styles.finalCtaCtaMain} ${styles.ctaPulse}`}>
+            <Link href="/app" className={`${styles.finalCtaCtaMain} ${styles.ctaPulse}`} data-track-cta="final">
               Analyser mon prospect gratuitement
             </Link>
             <span className={styles.finalCtaSub}>Aperçu gratuit instantané - Rapport complet à 24 €</span>

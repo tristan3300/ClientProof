@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import styles from '../app/page.module.css';
+import { trackEvent } from '@/lib/tracking';
 
 export default function LandingInteractions() {
   useEffect(() => {
@@ -66,6 +67,15 @@ export default function LandingInteractions() {
       gaugeObserver.observe(gauge);
     }
 
+    // =================== CTA CLICK TRACKING ===================
+    const handleCtaClick = (e: MouseEvent) => {
+      const cta = (e.target as HTMLElement).closest('[data-track-cta]');
+      if (cta) {
+        trackEvent('cta_click', { location: cta.getAttribute('data-track-cta')! });
+      }
+    };
+    document.addEventListener('click', handleCtaClick);
+
     // =================== FAQ ACCORDION ===================
     const faqButtons = document.querySelectorAll(`.${styles.faqQ}`);
     const handleFaqClick = (e: Event) => {
@@ -84,8 +94,10 @@ export default function LandingInteractions() {
         if (chevron) chevron.classList.remove(styles.faqChevronOpen);
       });
 
-      // Toggle clicked
+      // Toggle clicked - track FAQ open
       if (!wasOpen) {
+        const questionText = btn.textContent?.trim() || '';
+        trackEvent('faq_open', { question: questionText });
         item.classList.add(styles.faqItemOpen);
         const answer = item.querySelector(`.${styles.faqA}`);
         if (answer) answer.classList.add(styles.faqAOpen);
@@ -101,6 +113,7 @@ export default function LandingInteractions() {
     // =================== CLEANUP ===================
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleCtaClick);
       revealObserver.disconnect();
       if (gaugeObserver) gaugeObserver.disconnect();
       faqButtons.forEach((btn) => {

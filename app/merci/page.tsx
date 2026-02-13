@@ -1,7 +1,15 @@
+"use client";
+
+import { useEffect } from "react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/tracking";
 import styles from "./page.module.css";
 
 export default function MerciPage() {
+  useEffect(() => {
+    trackEvent('thank_you_view');
+  }, []);
+
   return (
     <>
       <nav className={styles.nav}>
