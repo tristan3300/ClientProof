@@ -1,15 +1,54 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
+import { getSupabase } from "@/lib/supabase";
+import { generateFullAnalysis } from "@/lib/analysis";
+
+export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   const stripe = getStripe();
-  const { analysisId } = await req.json();
+  const { analysisId, testSecret } = await req.json();
 
   if (!analysisId) {
     return NextResponse.json(
       { error: "ID d'analyse manquant." },
       { status: 400 }
     );
+  }
+
+  // Test mode: bypass Stripe, mark as paid, generate report
+  if (testSecret && testSecret === process.env.TEST_PAY_SECRET) {
+    try {
+      const supabase = getSupabase();
+      const { data } = await supabase
+        .from("analyses")
+        .select("*")
+        .eq("id", analysisId)
+        .single();
+
+      if (!data) {
+        return NextResponse.json({ error: "Analyse introuvable." }, { status: 404 });
+      }
+
+      if (!data.full_analysis && data.conversation) {
+        const fullAnalysis = await generateFullAnalysis(data.conversation);
+        await supabase
+          .from("analyses")
+          .update({ paid: true, full_analysis: fullAnalysis })
+          .eq("id", analysisId);
+      } else {
+        await supabase
+          .from("analyses")
+          .update({ paid: true })
+          .eq("id", analysisId);
+      }
+
+      const origin = req.headers.get("origin") || req.nextUrl.origin;
+      return NextResponse.json({ url: `${origin}/rapport?id=${analysisId}` });
+    } catch (err) {
+      console.error("Test bypass error:", err instanceof Error ? err.message : err);
+      return NextResponse.json({ error: "Erreur test bypass." }, { status: 500 });
+    }
   }
 
   try {
@@ -22,11 +61,11 @@ export async function POST(req: NextRequest) {
         {
           price_data: {
             currency: "eur",
-            unit_amount: 100, // 1€ en centimes — changer à 2900 pour 29€
+            unit_amount: 100, // 1 euro en centimes - changer a 2900 pour 29 euros
             product_data: {
-              name: "ClientProof - Analyse complète",
+              name: "ClientProof - Analyse complete",
               description:
-                "Rapport détaillé : red flags, recommandations, clauses, message type",
+                "Rapport detaille : red flags, recommandations, clauses, message type",
             },
           },
           quantity: 1,
@@ -43,7 +82,7 @@ export async function POST(req: NextRequest) {
       err instanceof Error ? err.message : err
     );
     return NextResponse.json(
-      { error: "Erreur lors de la création du paiement." },
+      { error: "Erreur lors de la creation du paiement." },
       { status: 500 }
     );
   }

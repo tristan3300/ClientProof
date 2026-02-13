@@ -231,10 +231,11 @@ export default function AppPage() {
   /* ---- checkout ---- */
   const startCheckout = useCallback(async (analysisId: string) => {
     try {
+      const testSecret = new URLSearchParams(window.location.search).get('test') || undefined;
       const res = await fetch('/api/create-checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ analysisId }),
+        body: JSON.stringify({ analysisId, testSecret }),
       });
       const data = await res.json();
       if (data.url) {

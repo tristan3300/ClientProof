@@ -224,10 +224,11 @@ function RapportContent() {
       if (res.status === 403 && data.error === 'not_paid') {
         // Redirect to payment
         try {
+          const testSecret = new URLSearchParams(window.location.search).get('test') || undefined;
           const checkoutRes = await fetch('/api/create-checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ analysisId }),
+            body: JSON.stringify({ analysisId, testSecret }),
           });
           const checkoutData = await checkoutRes.json();
           if (checkoutData.url) {
