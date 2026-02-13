@@ -1,0 +1,1053 @@
+/* ===================== NAV ===================== */
+.nav {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.logoAccent {
+  color: var(--red);
+}
+
+/* ===================== CONTAINER ===================== */
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseBtn {
+  0%, 100% { box-shadow: 0 4px 20px var(--red-glow); }
+  50% { box-shadow: 0 4px 30px rgba(220, 38, 38, 0.45); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 4px 20px var(--red-glow), 0 0 0 0 var(--red-glow); }
+  50% { box-shadow: 0 4px 20px var(--red-glow), 0 0 0 8px rgba(220, 38, 38, 0.08); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.7; }
+}
+
+@keyframes cascadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes progressFill {
+  from { width: 0; }
+}
+
+@keyframes loadingStepIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes arrowBounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+/* ===================== HEADER ===================== */
+.headerBlock {
+  text-align: center;
+  padding: 48px 0 0;
+}
+
+.stepBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--red-light);
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 0.2px;
+}
+
+.stepBadge svg {
+  flex-shrink: 0;
+}
+
+/* Progress bar under step badge */
+.progressBarWrap {
+  max-width: 200px;
+  margin: 0 auto 20px;
+  height: 3px;
+  background: var(--border-light);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  width: 0%;
+  background: var(--red);
+  border-radius: 3px;
+  transition: width 0.4s ease-out;
+}
+
+/* Social proof inline */
+.socialProofInline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.headerBlock h1 {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: var(--dark);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.headerBlock p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===================== FORM ===================== */
+.formSection {
+  margin-top: 32px;
+}
+
+.textareaWrap {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.3s;
+}
+
+.textareaWrap:focus-within {
+  border-color: var(--red);
+  box-shadow: 0 8px 30px rgba(220, 38, 38, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 280px;
+  padding: 20px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  background: transparent;
+  resize: vertical;
+}
+
+.textarea::placeholder {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.textareaFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-alt);
+}
+
+.charCount {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.qualityIndicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.qualityDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.qualityLow {
+  color: var(--text-muted);
+}
+
+.qualityLow .qualityDot {
+  background: var(--text-muted);
+}
+
+.qualityMedium {
+  color: var(--orange);
+}
+
+.qualityMedium .qualityDot {
+  background: var(--orange);
+}
+
+.qualityGood {
+  color: var(--green);
+}
+
+.qualityGood .qualityDot {
+  background: var(--green);
+}
+
+.btnWrap {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.btnAnalyze {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px var(--red-glow);
+  width: 100%;
+  justify-content: center;
+  animation: pulseBtn 2.5s ease-in-out infinite;
+  position: relative;
+}
+
+.btnAnalyze .arrow {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btnAnalyze:hover .arrow {
+  transform: translateX(4px);
+}
+
+.btnAnalyze:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(220, 38, 38, 0.35);
+  animation: none;
+}
+
+.btnAnalyze:active {
+  transform: translateY(0);
+}
+
+.btnAnalyze:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  animation: none;
+}
+
+.btnSubtext {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ===================== TIPS ===================== */
+.tips {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tipChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.tipChip svg {
+  flex-shrink: 0;
+  color: var(--red);
+}
+
+/* ===================== REASSURANCE ===================== */
+.reassurance {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.reassuranceItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.reassuranceItem svg {
+  flex-shrink: 0;
+  color: var(--green);
+}
+
+/* ===================== ERROR ===================== */
+.errorMsg {
+  display: none;
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: var(--red-light);
+  color: var(--red);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.errorMsgVisible {
+  display: block;
+}
+
+/* ===================== RESULT SECTION ===================== */
+.resultSection {
+  display: none;
+  margin-top: 32px;
+}
+
+.resultSectionVisible {
+  display: block;
+}
+
+.resultCard {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Conditional colored header */
+.resultHeader {
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.5s;
+  opacity: 0;
+}
+
+.resultHeaderRiskHigh {
+  background: linear-gradient(135deg, #fef2f2 0%, #fff5f5 100%);
+}
+
+.resultHeaderRiskMedium {
+  background: linear-gradient(135deg, #fff7ed 0%, #fffbf5 100%);
+}
+
+.resultHeaderRiskLow {
+  background: linear-gradient(135deg, #f0fdf4 0%, #f5fff8 100%);
+}
+
+.resultHeaderVisible {
+  animation: cascadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 500px) {
+  .resultHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ===================== SCORE CIRCLE ===================== */
+.scoreCircle {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.scoreSvg {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
+}
+
+.scoreBg {
+  fill: none;
+  stroke: var(--border-light);
+  stroke-width: 6;
+}
+
+.scoreFill {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 226.2;
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scoreNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.scoreNumber small {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* ===================== RESULT INFO ===================== */
+.resultInfo h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.resultInfo p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ===================== RISK BADGE ===================== */
+.riskBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.riskBadgeHigh {
+  background: var(--red-light);
+  color: var(--red);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+}
+
+.riskBadgeMedium {
+  background: var(--orange-light);
+  color: var(--orange);
+  border: 1px solid rgba(234, 88, 12, 0.15);
+}
+
+.riskBadgeLow {
+  background: var(--green-light);
+  color: var(--green);
+  border: 1px solid rgba(22, 163, 74, 0.15);
+}
+
+/* ===================== RESULT BODY ===================== */
+.resultBody {
+  padding: 28px;
+  opacity: 0;
+}
+
+.resultBodyVisible {
+  animation: cascadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.resultSummary {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  background: var(--bg-alt);
+  border-radius: 12px;
+  border-left: 4px solid var(--red);
+}
+
+/* ===================== BLURRED TEASER ITEMS ===================== */
+.lockedItems {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  opacity: 0;
+}
+
+.lockedItemsVisible {
+  animation: cascadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.lockedItem {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 16px 20px;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.lockedItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.lockedItemHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.lockIcon {
+  width: 18px;
+  height: 18px;
+  background: var(--red-light);
+  color: var(--red);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.lockedItemPreview {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  filter: blur(5px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.lockedItemOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.95));
+  pointer-events: none;
+}
+
+/* Tooltip on hover */
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--dark);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.lockedItem:hover .tooltip {
+  opacity: 1;
+}
+
+/* ===================== CTA UPSELL - REDESIGNED ===================== */
+.resultTeaser {
+  text-align: center;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.resultTeaserVisible {
+  animation: cascadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+}
+
+/* Subtle glow effect */
+.resultTeaser::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(220, 38, 38, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.teaserUrgencyTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(220, 38, 38, 0.15);
+  color: #fca5a5;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  letter-spacing: 0.3px;
+}
+
+.resultTeaser h4 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+  position: relative;
+}
+
+.priceComparison {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.oldPrice {
+  font-size: 15px;
+  color: #94a3b8;
+  text-decoration: line-through;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.newPrice {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.newPrice em {
+  font-style: normal;
+  color: #4ade80;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+  text-align: left;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.featureList li {
+  font-size: 14px;
+  color: #cbd5e1;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.ctaFull {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--red);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px 40px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+  animation: pulseGlow 2.5s ease-in-out infinite;
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+.ctaFull .ctaArrow {
+  display: inline-block;
+  animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+.ctaFull:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+  animation: none;
+}
+
+.ctaTrustLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+  position: relative;
+}
+
+.ctaTrustLine span {
+  white-space: nowrap;
+}
+
+.ctaTrustSep {
+  width: 3px;
+  height: 3px;
+  background: #475569;
+  border-radius: 50%;
+}
+
+.socialProofDynamic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+  position: relative;
+}
+
+.resultGuarantee {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  opacity: 0;
+}
+
+.resultGuaranteeVisible {
+  animation: cascadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+}
+
+/* ===================== POST-RESULT - RETENTION ===================== */
+.postResult {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 20px;
+  opacity: 0;
+}
+
+.postResultVisible {
+  animation: cascadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
+
+.btnNewAnalysis {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnNewAnalysis:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: var(--red-light);
+}
+
+.shareBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.btnCopyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnCopyLink:hover {
+  border-color: var(--text-secondary);
+  color: var(--text);
+}
+
+.btnCopyLinkCopied {
+  background: var(--green-light);
+  color: var(--green);
+  border-color: rgba(22, 163, 74, 0.2);
+}
+
+/* ===================== MOBILE STICKY CTA ===================== */
+.stickyCta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-light);
+  padding: 12px 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stickyCtaVisible {
+  transform: translateY(0);
+}
+
+.stickyCtaLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--red);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px var(--red-glow);
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.stickySub {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ===================== FOOTER ===================== */
+.footer {
+  padding: 40px 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ===================== PAGE BACKGROUND ===================== */
+.page {
+  background: var(--bg-alt);
+  min-height: 100vh;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .scoreCircle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .scoreSvg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .scoreNumber {
+    font-size: 22px;
+  }
+
+  .scoreNumber small {
+    font-size: 11px;
+  }
+
+  .stickyCta {
+    display: block;
+  }
+
+  .ctaFull {
+    width: 100%;
+  }
+
+  .lockedItem {
+    padding: 14px 16px;
+  }
+
+  .resultTeaser {
+    padding: 24px 20px;
+  }
+
+  .btnNewAnalysis {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .resultBody {
+    padding: 20px;
+  }
+
+  .resultHeader {
+    padding: 20px;
+  }
+
+  .tips {
+    gap: 6px;
+  }
+
+  .tipChip {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .reassurance {
+    gap: 12px 20px;
+  }
+
+  .reassuranceItem {
+    font-size: 12px;
+  }
+
+  .textarea {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 375px) {
+  .headerBlock h1 {
+    font-size: 22px;
+  }
+
+  .resultTeaser h4 {
+    font-size: 17px;
+  }
+
+  .ctaFull {
+    font-size: 15px;
+    padding: 16px 20px;
+  }
+
+  .ctaTrustLine {
+    font-size: 11px;
+    gap: 8px;
+  }
+}

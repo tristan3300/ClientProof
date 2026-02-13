@@ -1,0 +1,97 @@
+.nav {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 24px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+.headerBlock {
+  text-align: center;
+  padding: 48px 24px 0;
+}
+
+.stepBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-light);
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(22, 163, 74, 0.15);
+}
+
+.headerBlock h1 {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: var(--dark);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.headerBlock p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.tallyWrap {
+  width: 100%;
+  max-width: 720px;
+  margin: 32px auto 0;
+  padding: 0 24px;
+}
+
+.reassurance {
+  text-align: center;
+  padding: 24px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.reassuranceRow {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.reassuranceItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.reassuranceItem svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}

@@ -1,0 +1,648 @@
+/* ===================== STATE SCREENS ===================== */
+.stateScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.stateCard {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 32px;
+  max-width: 460px;
+  width: 100%;
+}
+
+.stateCard h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.stateCard p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top-color: var(--red);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorLink {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--red);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.errorLink:hover {
+  text-decoration: underline;
+}
+
+/* ===================== NAV ===================== */
+.nav {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.logoAccent {
+  color: var(--red);
+}
+
+/* ===================== REPORT ===================== */
+.report {
+  padding: 40px 0 60px;
+  background: var(--bg-alt);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===================== HEADER CARD ===================== */
+.reportHeaderCard {
+  background: var(--dark);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.reportTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.reportLogo {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.reportLogoAccent {
+  color: var(--red);
+}
+
+.reportDate {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.reportScoreRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 500px) {
+  .reportScoreRow {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ===================== RISK TAG ===================== */
+.riskTag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.riskTagHigh {
+  background: rgba(220, 38, 38, 0.2);
+  color: #fca5a5;
+}
+
+.riskTagMedium {
+  background: rgba(234, 88, 12, 0.2);
+  color: #fdba74;
+}
+
+.riskTagLow {
+  background: rgba(22, 163, 74, 0.2);
+  color: #86efac;
+}
+
+.reportVerdict {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.reportVerdictSub {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* ===================== SECTIONS ===================== */
+.reportSection {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--red);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionTitle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sectionTitleGreen {
+  composes: sectionTitle;
+  color: var(--green);
+}
+
+/* ===================== RED FLAGS ===================== */
+.flagItem {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.flagItem:last-child {
+  border-bottom: none;
+}
+
+.flagItemHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.flagName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.severityTag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.severityCritique {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+.severityModere {
+  background: var(--orange-light);
+  color: var(--orange);
+}
+
+.severityMineur {
+  background: #f0f9ff;
+  color: #0284c7;
+}
+
+.flagExplanation {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===================== GREEN FLAGS ===================== */
+.greenItem {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.greenItem:last-child {
+  border-bottom: none;
+}
+
+.greenDot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  margin-top: 7px;
+}
+
+.greenItem strong {
+  font-size: 14px;
+  color: var(--dark);
+}
+
+.greenItem p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ===================== RECOMMENDATIONS ===================== */
+.recoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recoItem {
+  font-size: 15px;
+  color: var(--text);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.55;
+}
+
+.recoItem:last-child {
+  border-bottom: none;
+}
+
+.recoNum {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--red-light);
+  color: var(--red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+/* ===================== CLAUSES ===================== */
+.clauseItem {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.clauseItem:last-child {
+  border-bottom: none;
+}
+
+.clauseTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.clauseContent {
+  font-size: 14px;
+  color: var(--text-secondary);
+  background: var(--bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 12px 16px;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+/* ===================== PRICING ===================== */
+.pricingAdvice {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.riskPremium {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 16px;
+  background: var(--orange-light);
+  color: var(--orange);
+  border-radius: 8px;
+}
+
+/* ===================== MESSAGE ===================== */
+.messageBlock {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.65;
+  white-space: pre-wrap;
+  position: relative;
+}
+
+.copyBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--dark);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.copyBtn:hover {
+  background: #334155;
+}
+
+/* ===================== SCROLL REVEAL ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.revealDelay1 {
+  transition-delay: 0.1s;
+}
+
+/* ===================== DOWNLOAD BAR ===================== */
+.downloadBar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--dark);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.downloadBtn:hover {
+  background: #334155;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.downloadBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.downloadBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.downloadSpinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ===================== NO PRINT (hidden in PDF) ===================== */
+.noPrint {
+  /* Marker class – elements hidden via JS during PDF export */
+}
+
+/* ===================== SHARE SECTION ===================== */
+.shareSection {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.shareText {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.shareButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.shareBtn:hover {
+  border-color: var(--red);
+  color: var(--red);
+  transform: translateY(-1px);
+}
+
+.shareBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===================== CTA SECTION ===================== */
+.ctaSection {
+  text-align: center;
+  padding: 60px 32px;
+  margin-top: 32px;
+  background: var(--dark);
+  border-radius: 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse,
+    rgba(220, 38, 38, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.ctaTitle {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.ctaSubtitle {
+  font-size: 16px;
+  color: #94a3b8;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--red);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 30px rgba(220, 38, 38, 0.45);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: -0.2px;
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.ctaButton:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4), 0 0 0 0 rgba(220, 38, 38, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4),
+      0 0 0 8px rgba(220, 38, 38, 0.08);
+  }
+}
+
+.ctaSub {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+  position: relative;
+}
+
+/* ===================== FOOTER ===================== */
+.footer {
+  padding: 40px 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+}
+
+.footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===================== PDF PAGE BREAK ===================== */
+.pdfBreak {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
