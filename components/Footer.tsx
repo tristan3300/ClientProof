@@ -2,11 +2,11 @@ import Link from 'next/link';
 import styles from './Footer.module.css';
 
 const blogArticles = [
-  { title: 'Client toxique freelance', href: '/blog/client-toxique-freelance.html' },
-  { title: 'Refuser un client freelance', href: '/blog/refuser-client-freelance.html' },
-  { title: 'Scope creep freelance', href: '/blog/scope-creep-freelance.html' },
-  { title: 'Client qui ne paie pas', href: '/blog/client-freelance-ne-paie-pas.html' },
-  { title: 'Signaux mauvais client', href: '/blog/signaux-mauvais-client-freelance.html' },
+  { title: 'Client toxique freelance', href: '/blog/client-toxique-freelance' },
+  { title: 'Refuser un client freelance', href: '/blog/refuser-client-freelance' },
+  { title: 'Scope creep freelance', href: '/blog/scope-creep-freelance' },
+  { title: 'Client qui ne paie pas', href: '/blog/client-freelance-ne-paie-pas' },
+  { title: 'Signaux mauvais client', href: '/blog/signaux-mauvais-client-freelance' },
 ];
 
 export default function Footer() {
