@@ -405,6 +405,224 @@
   background: #334155;
 }
 
+/* ===================== SCROLL REVEAL ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.revealDelay1 {
+  transition-delay: 0.1s;
+}
+
+/* ===================== DOWNLOAD BAR ===================== */
+.downloadBar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--dark);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.downloadBtn:hover {
+  background: #334155;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.downloadBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.downloadBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.downloadSpinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ===================== NO PRINT (hidden in PDF) ===================== */
+.noPrint {
+  /* Marker class - elements hidden via JS during PDF export */
+}
+
+/* ===================== SHARE SECTION ===================== */
+.shareSection {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.shareText {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.shareButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.shareBtn:hover {
+  border-color: var(--red);
+  color: var(--red);
+  transform: translateY(-1px);
+}
+
+.shareBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===================== CTA SECTION ===================== */
+.ctaSection {
+  text-align: center;
+  padding: 60px 32px;
+  margin-top: 32px;
+  background: var(--dark);
+  border-radius: 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse,
+    rgba(220, 38, 38, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.ctaTitle {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.ctaSubtitle {
+  font-size: 16px;
+  color: #94a3b8;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--red);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 30px rgba(220, 38, 38, 0.45);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: -0.2px;
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.ctaButton:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4), 0 0 0 0 rgba(220, 38, 38, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4),
+      0 0 0 8px rgba(220, 38, 38, 0.08);
+  }
+}
+
+.ctaSub {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+  position: relative;
+}
+
 /* ===================== FOOTER ===================== */
 .footer {
   padding: 40px 24px;
@@ -421,4 +639,10 @@
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+/* ===================== PDF PAGE BREAK ===================== */
+.pdfBreak {
+  page-break-inside: avoid;
+  break-inside: avoid;
 }

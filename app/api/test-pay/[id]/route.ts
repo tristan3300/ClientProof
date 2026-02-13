@@ -5,14 +5,12 @@ import { generateFullAnalysis } from "@/lib/analysis";
 export const maxDuration = 60;
 
 export async function POST(
-  _req: NextRequest,
+  req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  // Disabled in production
-  if (
-    process.env.VERCEL ||
-    process.env.NODE_ENV === "production"
-  ) {
+  // Protected by secret key - works in all environments
+  const { secret } = await req.json().catch(() => ({ secret: '' }));
+  if (secret !== process.env.TEST_PAY_SECRET) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
